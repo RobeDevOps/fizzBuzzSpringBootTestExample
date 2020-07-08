@@ -9,9 +9,9 @@ pipeline {
         )
     }
     stages{
-        stage('Verify'){
+        stage('test'){
             steps{
-                sh "ls -ltr"
+                sh "mvn test"
             }
         }
     }
