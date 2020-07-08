@@ -9,9 +9,14 @@ pipeline {
         )
     }
     stages{
-        stage('test'){
+        stage('Testing'){
             steps{
                 sh "mvn test -B"
+            }
+        }
+        stage('Running'){
+            steps{
+                sh "SERVER_PORT=9093 mvn spring-boot:run"
             }
         }
     }
