@@ -16,7 +16,8 @@ pipeline {
         }
         stage('Running'){
             steps{
-                sh "SERVER_PORT=9093 mvn spring-boot:run"
+                // sh "SERVER_PORT=9093 mvn spring-boot:run"
+                sh "tree ."
             }
         }
     }
