@@ -11,13 +11,14 @@ pipeline {
     stages{
         stage('Testing'){
             steps{
-                sh "mvn test -B"
+                // sh "mvn test -B"
+                echo "test here"
             }
         }
         stage('Generate Jar'){
             steps{
                 sh "mvn clean install -Dmaven.test.skip=true -B"
-                sh "tree src"
+                sh "tree target"
             }
         }
         stage('Deploying the server'){
