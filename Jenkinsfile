@@ -23,11 +23,7 @@ pipeline {
         }
         stage('Deploying the server'){
             steps{
-                dir("/home/pi/deploy"){
-                    sh "cp ${WORKSPACE}/target/gs-rest-service-0.1.0.jar ."
-                    sh "tree ."
-                    sh "java -jar -Dserver.port=8083 gs-rest-service-0.1.0.jar"
-                }                
+                sh "cp target/gs-rest-service-0.1.0.war /etc/tomcat9/webapps"    
             }
         }
     }
