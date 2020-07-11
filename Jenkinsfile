@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploying the server'){
             steps{
-                sh "cp target/gs-rest-service-0.1.0.war /etc/tomcat9/webapps/FizzBuzzApp.war"
+                sh "cp target/gs-rest-service-0.1.0.war /var/lib/tomcat9/webapps/FizzBuzzApp.war"
                 sh "systemctl restart tomcat9"   
             }
         }
