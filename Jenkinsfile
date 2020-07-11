@@ -14,6 +14,11 @@ pipeline {
                 sh "mvn test -B"
             }
         }
+        stage('Generate Jar'){
+            steps{
+                sh "mvn clean install -B"
+            }
+        }
         stage('Running'){
             steps{
                 // sh "SERVER_PORT=9093 mvn spring-boot:run"
