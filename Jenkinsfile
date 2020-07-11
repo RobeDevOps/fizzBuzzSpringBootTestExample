@@ -26,7 +26,7 @@ pipeline {
                 dir("/home/pi/deploy"){
                     sh "cp ${WORKSPACE}/target/gs-rest-service-0.1.0.jar ."
                     sh "tree ."
-                    sh "java -jar gs-rest-service-0.1.0.jar"
+                    sh "java -jar -Dserver.port=8083 gs-rest-service-0.1.0.jar"
                 }                
             }
         }
