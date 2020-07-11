@@ -26,7 +26,7 @@ pipeline {
                 dir("/home/pi/deploy"){
                     sh "cp ${WORKSPACE}/target/gs-rest-service-0.1.0.jar ."
                     sh "tree ."
-                    sh "SERVER_PORT=9093 mvn spring-boot:run"
+                    sh "java -jar gs-rest-service-0.1.0.jar"
                 }                
             }
         }
