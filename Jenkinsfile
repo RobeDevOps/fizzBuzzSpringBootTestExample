@@ -19,10 +19,13 @@ pipeline {
                 sh "mvn clean install -B"
             }
         }
-        stage('Running'){
+        stage('Deploying the server'){
             steps{
-                // sh "SERVER_PORT=9093 mvn spring-boot:run"
-                sh "tree ."
+                cp "src/target/gs-rest-service-0.1.0.jar /home/pi/deploy"
+                dir("/home/pi/deploy"){
+                    sh "tree ."
+                    sh "SERVER_PORT=9093 mvn spring-boot:run"
+                }                
             }
         }
     }
