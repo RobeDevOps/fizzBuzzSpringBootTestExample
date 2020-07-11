@@ -17,6 +17,7 @@ pipeline {
         stage('Generate Jar'){
             steps{
                 sh "mvn clean install -Dmaven.test.skip=true -B"
+                sh "tree src"
             }
         }
         stage('Deploying the server'){
